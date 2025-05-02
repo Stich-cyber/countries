@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body class="dark-mode">
+    <header>
+      <div class="container">
+        <nav>
+          <p class="text1">Where in the world?</p>
+          <button id="theme-toggle" class="theme-toggle">
+            <i class="far fa-moon"></i>
+            <span>Dark Mode</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <form>
+          <i class="fas fa-search"></i>
+          <input
+            placeholder="Search for a country…"
+            type="text"
+            id="search-input"
+          />
+        </form>
+        <select id="sort-select">
+          <option>Sort<option>
+          <option>A-Z</option>
+          <option>Z-A</option>
+        </select>
+      </div>
+      <section id="countries-container"></section>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>
