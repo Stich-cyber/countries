@@ -39,6 +39,12 @@ sortSelect.addEventListener("change", (e) => {
     sortedCountries.sort((a, b) => a.name.common.localeCompare(b.name.common));
   } else if (sort === "z-a") {
     sortedCountries.sort((a, b) => b.name.common.localeCompare(a.name.common));
+  } else if (
+    ["africa", "europe", "asia", "americas", "oceania"].includes(sort)
+  ) {
+    sortedCountries = countries.filter(
+      (country) => country.region.toLowerCase() === sort
+    );
   }
   displayCountries(sortedCountries);
 });
