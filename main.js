@@ -4,12 +4,14 @@ let sortSelect = document.getElementById("sort-select");
 let themeToggle = document.getElementById("theme-toggle");
 let body = document.body;
 let countries = [];
+
 fetch("https://restcountries.com/v3.1/all")
   .then((response) => response.json())
   .then((data) => {
     countries = data;
     displayCountries(countries);
   });
+
 function displayCountries(countries) {
   countriesContainer.innerHTML = countries
     .map(
@@ -25,6 +27,7 @@ function displayCountries(countries) {
     )
     .join("");
 }
+
 searchInput.addEventListener("input", (e) => {
   const searchTerm = e.target.value.toLowerCase();
   const filteredCountries = countries.filter((country) =>
@@ -32,9 +35,11 @@ searchInput.addEventListener("input", (e) => {
   );
   displayCountries(filteredCountries);
 });
+
 sortSelect.addEventListener("change", (e) => {
   const sort = e.target.value;
   let sortedCountries = [...countries];
+
   if (sort === "a-z") {
     sortedCountries.sort((a, b) => a.name.common.localeCompare(b.name.common));
   } else if (sort === "z-a") {
@@ -46,8 +51,24 @@ sortSelect.addEventListener("change", (e) => {
       (country) => country.region.toLowerCase() === sort
     );
   }
+
   displayCountries(sortedCountries);
 });
+
 themeToggle.addEventListener("click", () => {
   body.classList.toggle("dark-mode");
+});
+
+countriesContainer.addEventListener("click", (e) => {
+  const card = e.target.closest(".card-item");
+  if (!card) return;
+
+  const countryName = card.querySelector("p").textContent;
+  const country = countries.find(
+    (c) => c.name.common.toLowerCase() === countryName.toLowerCase()
+  );
+
+  if (country) {
+    window.location.href = `flag.html?code=${country.cca3}`;
+  }
 });

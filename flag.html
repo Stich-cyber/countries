@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Country Details</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body class="dark-mode">
+    <header>
+      <div class="container">
+        <nav>
+          <p class="text1">Where in the world?</p>
+          <button id="theme-toggle" class="theme-toggle">
+            <i class="far fa-moon"></i>
+            <span>Dark Mode</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <button id="back-button" class="back-button">
+          <i class="fas fa-arrow-left"></i> Back
+        </button>
+        <div class="country-details">
+          <img id="country-flag" src="" alt="Country Flag" />
+          <div class="details">
+            <h1 id="country-name">Country Name</h1>
+            <p><strong>Native Name:</strong> <span id="native-name"></span></p>
+            <p><strong>Population:</strong> <span id="population"></span></p>
+            <p><strong>Region:</strong> <span id="region"></span></p>
+            <p><strong>Capital:</strong> <span id="capital"></span></p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./flag.js"></script>
+  </body>
+</html>
